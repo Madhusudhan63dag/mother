@@ -113,7 +113,7 @@ const Hero = () => {
                     {/* Hero Card */}
                     <div className={`hero-card overflow-hidden ${isLoaded ? 'fade-in-scale' : 'opacity-0'}`}>
                         {/* Banner Images */}
-                        <div className="relative w-full h-[300px] md:h-[500px]">
+                        <div className="relative w-full h-[200px] md:h-[500px]">
                             <div className="w-full h-full image-container image-shimmer relative">
                                 {banners.map((banner, index) => (
                                     <div
@@ -129,7 +129,7 @@ const Hero = () => {
                                         <img
                                             src={isMobile ? banner.mobile : banner.desktop}
                                             alt={`Banner ${index + 1}`}
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-full"
                                         />
                                     </div>
                                 ))}
