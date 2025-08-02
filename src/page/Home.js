@@ -221,6 +221,14 @@ const Hero = () => {
                                         <span className="flex-shrink-0 w-6 h-6 bg-gray-50 text-[#fcb000] rounded-full flex items-center justify-center shadow-sm border border-[#fcb000]/20">✓</span>
                                         <span className="text-gray-700">Enhances liver function and digestive health</span>
                                     </li>
+                                    <li className="flex items-center space-x-3">
+                                        <span className="flex-shrink-0 w-6 h-6 bg-gray-50 text-[#22c55e] rounded-full flex items-center justify-center shadow-sm border border-[#22c55e]/20">✓</span>
+                                        <span className="text-gray-700">Supports thyroid function and hormone balance</span>
+                                    </li>
+                                    <li className="flex items-center space-x-3">
+                                        <span className="flex-shrink-0 w-6 h-6 bg-gray-50 text-[#fcb000] rounded-full flex items-center justify-center shadow-sm border border-[#fcb000]/20">✓</span>
+                                        <span className="text-gray-700">Relieves gastric problems and improves gut health</span>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -301,7 +309,7 @@ const Product = ({ currentLang, translations }) => {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-[#fcb000]/10 to-gray-100/20 rounded-full blur-3xl"></div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Enhanced Header Section */}
                 <div className="text-center mb-16">
                     <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -338,16 +346,6 @@ const Product = ({ currentLang, translations }) => {
                                     alt="Mother Noni Power Plus - Complete Herbal Wellness Tonic"
                                     className={`w-full h-auto transform transition-all duration-500 ${isHovered ? 'scale-105 rotate-2' : 'scale-100'}`}
                                 />
-                                
-                                {/* Product Badge */}
-                                <div className="absolute top-4 right-4 bg-gradient-to-r from-[#fcb000] to-[#fcb000] text-white px-4 py-2 rounded-full shadow-lg">
-                                    <span className="font-bold text-sm">Premium Quality</span>
-                                </div>
-                                
-                                {/* Trust Badges */}
-                                <div className="absolute bottom-4 left-4 flex space-x-2">
-                                    <div className="bg-[#22c55e] text-white px-3 py-1 rounded-full text-xs font-semibold">100% Natural</div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -372,7 +370,8 @@ const Product = ({ currentLang, translations }) => {
                                     <p className="text-lg text-gray-700">One powerful herbal formula that naturally addresses multiple health challenges simultaneously</p>
                                 </div>
                                 
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    {/* First Row */}
                                     <div className="text-center bg-white/70 rounded-lg p-4">
                                         <h5 className="font-semibold text-[#fcb000] mb-2">Blood Sugar & Weight Management</h5>
                                         <p className="text-sm text-gray-600">Controls glucose levels and aids natural weight loss</p>
@@ -384,6 +383,16 @@ const Product = ({ currentLang, translations }) => {
                                     <div className="text-center bg-white/70 rounded-lg p-4">
                                         <h5 className="font-semibold text-[#fcb000] mb-2">Liver & Digestive Health</h5>
                                         <p className="text-sm text-gray-600">Enhances liver function and digestive wellness</p>
+                                    </div>
+                                    
+                                    {/* Second Row */}
+                                    <div className="text-center bg-white/70 rounded-lg p-4 md:col-start-1 lg:col-start-1">
+                                        <h5 className="font-semibold text-[#fcb000] mb-2">Thyroid Function Support</h5>
+                                        <p className="text-sm text-gray-600">Helps regulate thyroid hormones and metabolism</p>
+                                    </div>
+                                    <div className="text-center bg-white/70 rounded-lg p-4">
+                                        <h5 className="font-semibold text-[#fcb000] mb-2">Gastric Problem Relief</h5>
+                                        <p className="text-sm text-gray-600">Soothes acidity, gastritis and improves gut health</p>
                                     </div>
                                 </div>
                             </div>
@@ -490,12 +499,15 @@ const Testimonials = ({ currentLang, translations }) => {
         return null;
     }
 
-    // Carousel logic: show 3 cards, center is active
+    // Carousel logic: show 3 cards at a time with sliding effect
     const getCarouselTestimonials = () => {
         if (testimonials.length <= 3) return testimonials;
-        const prev = (currentSlide - 1 + testimonials.length) % testimonials.length;
-        const next = (currentSlide + 1) % testimonials.length;
-        return [testimonials[prev], testimonials[currentSlide], testimonials[next]];
+        const result = [];
+        for (let i = 0; i < 3; i++) {
+            const index = (currentSlide + i) % testimonials.length;
+            result.push(testimonials[index]);
+        }
+        return result;
     };
     const carouselTestimonials = getCarouselTestimonials();
 
@@ -506,75 +518,75 @@ const Testimonials = ({ currentLang, translations }) => {
                 <div className="absolute top-10 left-10 w-32 h-32 bg-[#22c55e]/10 rounded-full blur-2xl"></div>
                 <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#fcb000]/10 rounded-full blur-2xl"></div>
             </div>
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl font-bold mb-6">
+                <div className="text-center mb-8 md:mb-16">
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">
                         <span className="text-gray-800">Real Success Stories</span>
                     </h2>
                 </div>
                 {/* Carousel Showcase */}
-                <div className="flex items-center justify-center gap-4 mb-12 select-none">
+                <div className="flex items-start justify-center gap-2 md:gap-4 mb-12 select-none">
                     {/* Prev Arrow */}
                     <button 
                         onClick={goToPrevSlide}
-                        className="w-12 h-12 bg-white/80 hover:bg-[#22c55e] hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 border-2 border-[#22c55e] hover:scale-110"
+                        className="w-10 h-10 md:w-12 md:h-12 bg-white/80 hover:bg-[#22c55e] hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 border-2 border-[#22c55e] hover:scale-110 flex-shrink-0 mt-4"
                     >
-                        <ChevronLeft className="w-7 h-7 text-[#22c55e] hover:text-white" />
+                        <ChevronLeft className="w-5 h-5 md:w-7 md:h-7 text-[#22c55e] hover:text-white" />
                     </button>
-                    {/* Cards */}
-                    <div className="flex gap-0 md:gap-8 w-full max-w-3xl justify-center items-center relative">
-                        {carouselTestimonials.map((testimonial, idx) => {
-                            // Center card is active
-                            const isActive = idx === 1;
-                            return (
-                                <div
-                                    key={testimonial.name + testimonial.text}
-                                    className={`relative transition-all duration-500 flex-1 mx-[-1rem] md:mx-0 ${isActive ? 'z-20 scale-105' : 'z-10 scale-95 opacity-70'} `}
-                                    style={{
-                                        boxShadow: isActive ? '0 8px 32px 0 rgba(34,197,94,0.18)' : '0 2px 8px 0 rgba(34,197,94,0.08)',
-                                        filter: isActive ? 'blur(0)' : 'blur(0.5px)',
-                                    }}
-                                >
-                                    <div className={`backdrop-blur-lg bg-white/60 border-2 ${isActive ? 'border-[#22c55e] shadow-xl' : 'border-gray-200'} rounded-3xl p-8 flex flex-col h-full transition-all duration-500`}> 
-                                        {/* Stars */}
-                                        <div className="flex items-center mb-4">
-                                            {renderStars(testimonial.rating || 5)}
-                                        </div>
-                                        {/* Review Text */}
-                                        <p className="text-gray-800 text-base leading-relaxed mb-6 italic font-medium">
-                                            "{testimonial.text}"
-                                        </p>
-                                        {/* Customer Info */}
-                                        <div className="flex items-center gap-4 mt-auto">
-                                            <div className="w-14 h-14 rounded-full flex items-center justify-center ">
-                                                <span className="text-white font-bold text-xl">
+
+                    {/* Cards Container with Sliding Effect */}
+                    <div className="w-full max-w-6xl overflow-hidden px-2 md:px-0">
+                        <div className="flex gap-0 md:gap-8 w-full justify-center items-center relative">
+                            {carouselTestimonials.map((testimonial, idx) => {
+                                const isActive = idx === 1; // Center card is active
+                                return (
+                                    <div
+                                        key={testimonial.name + testimonial.text + idx}
+                                        className={`relative transition-all duration-500 flex-1 mx-[-1rem] md:mx-0 ${isActive ? 'z-20 scale-105' : 'z-10 scale-95 opacity-70'}`}
+                                        style={{
+                                            boxShadow: isActive ? '0 8px 32px 0 rgba(34,197,94,0.18)' : '0 2px 8px 0 rgba(34,197,94,0.08)',
+                                        }}
+                                    >
+                                        <div className={`backdrop-blur-lg bg-white/60 border-2 ${isActive ? 'border-[#22c55e] shadow-xl' : 'border-gray-200'} rounded-2xl md:rounded-3xl p-4 md:p-6 flex flex-col h-full transition-all duration-500 min-h-[280px] md:min-h-[300px]`}> 
+                                            {/* Stars */}
+                                            <div className="flex items-center mb-3 md:mb-4 justify-center">
+                                                {renderStars(testimonial.rating || 5)}
+                                            </div>
+                                            {/* Review Text */}
+                                            <p className="text-gray-800 text-xs md:text-sm leading-relaxed mb-3 md:mb-4 italic font-medium flex-grow text-center line-clamp-4">
+                                                "{testimonial.text}"
+                                            </p>
+                                            {/* Customer Info */}
+                                            <div className="flex flex-col items-center gap-2 md:gap-3 mt-auto">
+                                                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
                                                     <img src={testimonial.image} alt={testimonial.name} className="w-full h-full rounded-full object-cover" />
-                                                </span>
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
-                                                <p className="text-sm text-[#22c55e] font-medium">{testimonial.location}</p>
-                                            </div>
-                                            {/* Verified badge */}
-                                            <div className="ml-auto flex items-center gap-1 bg-[#22c55e] text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">
-                                                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                                </svg>
-                                                <span>Verified</span>
+                                                </div>
+                                                <div className="text-center">
+                                                    <h4 className="font-bold text-gray-900 text-sm md:text-base">{testimonial.name}</h4>
+                                                    <p className="text-xs text-[#22c55e] font-medium">{testimonial.location}</p>
+                                                </div>
+                                                {/* Verified badge */}
+                                                <div className="flex items-center gap-1 bg-[#22c55e] text-white px-2 py-1 rounded-full text-xs font-bold shadow-sm">
+                                                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                    </svg>
+                                                    <span>Verified</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            );
-                        })}
+                                );
+                            })}
+                        </div>
                     </div>
+
                     {/* Next Arrow */}
                     <button 
                         onClick={goToNextSlide}
-                        className="w-12 h-12 bg-white/80 hover:bg-[#22c55e] hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 border-2 border-[#22c55e] hover:scale-110"
+                        className="w-10 h-10 md:w-12 md:h-12 bg-white/80 hover:bg-[#22c55e] hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 border-2 border-[#22c55e] hover:scale-110 flex-shrink-0 mt-4"
                     >
-                        <ChevronRight className="w-7 h-7 text-[#22c55e] hover:text-white" />
+                        <ChevronRight className="w-5 h-5 md:w-7 md:h-7 text-[#22c55e] hover:text-white" />
                     </button>
                 </div>
                 {/* Slide Indicators */}
@@ -809,12 +821,12 @@ const UrgencyAndVideoSection = () => {
 
     return (
         <div className="py-20 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Urgency Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span className="text-gray-800">
-                            Don't Wait - Transform Your Health Today!
+                            Your Health Journey Begins Now – Don’t Delay!
                         </span>
                     </h2>
                     
@@ -926,7 +938,7 @@ const UrgencyAndVideoSection = () => {
                                 </div>
                                 <blockquote className="text-gray-700 italic">
                                     "I was skeptical at first, but Mother Noni Power Plus completely changed my life. My blood sugar is now stable, 
-                                    I have more energy, and my joint pain is gone. Best investment I've made for my health!"
+                                    Best investment I've made for my health!"
                                 </blockquote>
                             </div>
 
@@ -943,8 +955,7 @@ const UrgencyAndVideoSection = () => {
                                     <div className="ml-auto text-[#fcb000] text-sm">★★★★★</div>
                                 </div>
                                 <blockquote className="text-gray-700 italic">
-                                    "After 3 months with Mother Noni Power Plus, my HbA1c dropped from 9.2 to 6.8! My doctor was amazed. 
-                                    No more digestive issues and I can walk without knee pain again."
+                                    "After 3 months with Mother Noni Power Plus, my HbA1c dropped from 9.2 to 6.8! My doctor was amazed."
                                 </blockquote>
                             </div>
                         </div>

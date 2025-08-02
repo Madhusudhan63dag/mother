@@ -37,7 +37,7 @@ const FAQ = ({ translations }) => {
     const faqData = translations.en.faq.faqData;
 
     return (
-        <div className='w-full py-20 px-4 sm:px-8 relative overflow-hidden'>
+        <div className='w-full py-5 px-4 sm:px-8 relative overflow-hidden'>
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header Section */}
                 <div className="text-center mb-16">                    
@@ -52,7 +52,7 @@ const FAQ = ({ translations }) => {
                     </p>
                 </div>
                 
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
+                <div className='gap-12 items-start'>
                     {/* FAQ Questions Section */}
                     <div className="order-2 lg:order-1">
                         <div className="space-y-4">
@@ -64,26 +64,6 @@ const FAQ = ({ translations }) => {
                                     answer={faq.answer}
                                 />
                             ))}
-                        </div>
-                    </div>
-                    
-                    {/* Image Section */}
-                    <div className="order-1 lg:order-2 flex justify-center">
-                        <div className="relative">
-
-                            {/* Main image container */}
-                            <div className="relative bg-white rounded-3xl p-6 shadow-2xl border border-gray-100">
-                                <img 
-                                    src={ten} 
-                                    alt="Mother Noni Power Plus Product Information" 
-                                    className="w-full h-auto object-contain rounded-2xl transform hover:scale-105 transition-transform duration-500" 
-                                />
-                                
-                                {/* Image overlay badge */}
-                                <div className="absolute top-4 right-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-3 py-2 rounded-full shadow-lg">
-                                    <span className="font-bold text-xs">✓ Trusted</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

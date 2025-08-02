@@ -381,6 +381,15 @@ const Navbar = ({ currentLang, setCurrentLang, translations, languages }) => {
                                     <span className="text-lg font-bold text-[#1F7818]">{nav.home}</span>
                                 </a>
 
+                                <a href={nav.aboutUslink || "#"} className={`py-4 flex items-center space-x-3`}>
+                                    <div className="p-2">
+                                        <svg className="h-5 w-5 text-[#1F7818]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <span className="text-lg font-bold text-[#1F7818]">{nav.aboutUs}</span>
+                                </a>
+
                                 <a href={nav.productlink || "#"}
                                     className={`product-special py-4 flex items-center space-x-3`}>
                                     <div className="p-2 bg-green-50 rounded-lg">
@@ -449,6 +458,26 @@ const Navbar = ({ currentLang, setCurrentLang, translations, languages }) => {
                                             </span>
                                             <div className="ml-auto">
                                                 <svg className="h-4 w-4 text-orange-600 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href={nav.aboutUslink || "#"}
+                                        className="group flex items-center px-4 py-4"
+                                        onClick={toggleMenu}>
+                                        <div className="flex items-center space-x-4 w-full">
+                                            <div className="p-2 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-all duration-300">
+                                                <svg className="h-5 w-5 text-[#1F7818]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                            </div>
+                                            <span className="text-base font-semibold text-[#1F7818] group-hover:text-blue-700 transition-colors duration-300">
+                                                {nav.aboutUs}
+                                            </span>
+                                            <div className="ml-auto">
+                                                <svg className="h-4 w-4 text-blue-600 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                                 </svg>
                                             </div>
