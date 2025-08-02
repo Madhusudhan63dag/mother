@@ -13,7 +13,6 @@ import pr2 from '../assets/pr/2.webp';
 import pr3 from '../assets/pr/3.webp';
 import pr4 from '../assets/pr/4.webp';
 import pr5 from '../assets/pr/5.webp';
-import pr6 from '../assets/pr/6.webp';
 import pr7 from '../assets/pr/7.webp';
 import pr8 from '../assets/pr/8.webp';
 import pr9 from '../assets/pr/9.webp';
@@ -197,7 +196,7 @@ const Hero = () => {
                                 <div className="bg-white/50 backdrop-blur-sm rounded-xl p-4 border border-gray-200 shadow-sm">
                                     <h3 className="text-xl font-semibold text-[#fcb000] mb-2">All-in-One Health Solution</h3>
                                     <p className="text-gray-600 leading-relaxed">
-                                        From blood sugar management to weight loss, joint pain relief to digestive health - this powerful herbal juice addresses multiple health concerns naturally, without any side effects.
+                                        From supporting healthy blood sugar levels and weight management to easing joint pain and improving digestion, this potent herbal juice tackles multiple health concerns naturally — with no side effects
                                     </p>
                                 </div>
                             </div>
@@ -353,15 +352,6 @@ const Product = ({ currentLang, translations }) => {
                     {/* Content Side */}
                     <div className="space-y-8">
                         <div className="space-y-6">
-                            <h4 className="text-xl font-semibold text-gray-700 text-center">
-                                Mother Noni Power Plus contains over 25 time-tested Ayurvedic
-                            </h4>
-                            
-                            <div className="text-center mb-8">
-                                <p className="text-lg text-gray-600 leading-relaxed">
-                                    ingredients that work together to address multiple health concerns naturally and effectively.
-                                </p>
-                            </div>
 
                             {/* Solution Section */}
                             <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 border-2 border-[#22c55e] mt-8">
@@ -633,10 +623,6 @@ const ImageSlider = () => {
         {
             src: pr5,
             alt: "Mother Noni Power Plus Product 5"
-        },
-        {
-            src: pr6,
-            alt: "Mother Noni Power Plus Product 6"
         },
         {
             src: pr7,

@@ -5,7 +5,6 @@ import './App.css';
 
 // Keep only essential imports
 import Navbar from './components/Navbar';
-import MinimalNavbar from './components/MinimalNavbar';
 import Footer from './components/Footer';
 
 // Move translations to separate file to reduce bundle size
@@ -67,32 +66,14 @@ const App = () => {
     window.location.href = 'tel:+919908016333';
   };
 
-  // Component to conditionally render Navbar
+  // Component to render Navbar
   const ConditionalNavbar = () => {
-    const location = useLocation();
-    const isLandingPage = location.pathname === '/Mother-Noni-Power-Plus';
-    const isLandingPage2 = location.pathname === '/Mother-Noni-Power-Plus';
-    const isLandingPage3 = location.pathname === '/Mother-Noni-Power-Plus';
-    const isAgentPage = location.pathname === '/Mother-Noni-Power-Plus';
-    
-    if (isLandingPage || isLandingPage2 || isLandingPage3 || isAgentPage) {
-      return (isLandingPage || isLandingPage2 || isLandingPage3) ? <MinimalNavbar /> : null;
-    } else {
-      return <Navbar currentLang={currentLang} setCurrentLang={handleLanguageChange} translations={translations || {}} languages={languages} />;
-    }
+    return <Navbar currentLang={currentLang} setCurrentLang={handleLanguageChange} translations={translations || {}} languages={languages} />;
   };
 
-  // Component to conditionally render Footer
+  // Component to render Footer
   const ConditionalFooter = () => {
-    const location = useLocation();
-    const shouldShowFooter = location.pathname !== '/Mother-Noni-Power-Plus' && 
-                           location.pathname !== '/Mother-Noni-Power-Plus' && 
-                           location.pathname !== '/Mother-Noni-Power-Plus' && 
-                           location.pathname !== '/Mother-Noni-Power-Plus';
-    
-    return shouldShowFooter ? (
-      <Footer currentLang={currentLang} translations={translations || {}} />
-    ) : null;
+    return <Footer currentLang={currentLang} translations={translations || {}} />;
   };
 
   return (

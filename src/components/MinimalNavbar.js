@@ -1,5 +1,5 @@
 import React from 'react';
-// import logo from '../assets/logo.webp';
+import logo from '../assets/imagess/logo.webp';
 
 const MinimalNavbar = () => {
     return (
@@ -9,16 +9,16 @@ const MinimalNavbar = () => {
                     {/* Centered Logo and Product Name */}
                     <div className="flex items-center space-x-4">
                         <img 
-                            // src={logo} 
-                            alt="Dr. Joints Logo" 
+                            src={logo} 
+                            alt="Mother Noni Power Plus Logo" 
                             className="h-10 sm:h-14 md:h-18 w-auto object-contain" 
                         />
                         <div className="text-center">
                             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                                Dr. Joints
+                                Mother Noni Power Plus
                             </h1>
-                            <p className="text-sm sm:text-base md:text-lg text-blue-600 font-medium">
-                                Pain Relief Formula
+                            <p className="text-sm sm:text-base md:text-lg text-[#22c55e] font-medium">
+                                Complete Herbal Wellness Tonic
                             </p>
                         </div>
                     </div>
