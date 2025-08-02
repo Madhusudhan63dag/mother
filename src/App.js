@@ -70,10 +70,10 @@ const App = () => {
   // Component to conditionally render Navbar
   const ConditionalNavbar = () => {
     const location = useLocation();
-    const isLandingPage = location.pathname === '/Drjoints';
-    const isLandingPage2 = location.pathname === '/Drjoints2';
-    const isLandingPage3 = location.pathname === '/Drjoints3';
-    const isAgentPage = location.pathname === '/agent';
+    const isLandingPage = location.pathname === '/Mother-Noni-Power-Plus';
+    const isLandingPage2 = location.pathname === '/Mother-Noni-Power-Plus';
+    const isLandingPage3 = location.pathname === '/Mother-Noni-Power-Plus';
+    const isAgentPage = location.pathname === '/Mother-Noni-Power-Plus';
     
     if (isLandingPage || isLandingPage2 || isLandingPage3 || isAgentPage) {
       return (isLandingPage || isLandingPage2 || isLandingPage3) ? <MinimalNavbar /> : null;
@@ -85,10 +85,10 @@ const App = () => {
   // Component to conditionally render Footer
   const ConditionalFooter = () => {
     const location = useLocation();
-    const shouldShowFooter = location.pathname !== '/Drjoints' && 
-                           location.pathname !== '/Drjoints2' && 
-                           location.pathname !== '/Drjoints3' && 
-                           location.pathname !== '/agent';
+    const shouldShowFooter = location.pathname !== '/Mother-Noni-Power-Plus' && 
+                           location.pathname !== '/Mother-Noni-Power-Plus' && 
+                           location.pathname !== '/Mother-Noni-Power-Plus' && 
+                           location.pathname !== '/Mother-Noni-Power-Plus';
     
     return shouldShowFooter ? (
       <Footer currentLang={currentLang} translations={translations || {}} />

@@ -67,8 +67,8 @@ const Hero = () => {
             mobile: banner1Mobile,
         },
         {
-            desktop: banner3,
-            mobile: banner3Mobile,
+            desktop: banner2,
+            mobile: banner2,
         }
     ];
 
@@ -109,11 +109,11 @@ const Hero = () => {
         <div className="w-full relative bg-gradient-to-b from-gray-50 to-white">
             <div className="relative">
                 {/* Hero Content Container */}
-                <div className="max-w-7xl mx-auto">
+                <div className="">
                     {/* Hero Card */}
                     <div className={`hero-card overflow-hidden ${isLoaded ? 'fade-in-scale' : 'opacity-0'}`}>
                         {/* Banner Images */}
-                        <div className="relative w-full h-[200px] md:h-[500px]">
+                        <div className="relative w-full h-[200px] md:h-[550px]">
                             <div className="w-full h-full image-container image-shimmer relative">
                                 {banners.map((banner, index) => (
                                     <div
@@ -848,7 +848,7 @@ const UrgencyAndVideoSection = () => {
                     {/* Video Section */}
                     <div className="space-y-6">
                         <div className="bg-white rounded-3xl p-6 shadow-2xl border-4 border-[#fcb000]">
-                            <div lassName="relative aspect-video rounded-2xl overflow-hidden shadow-xl bg-gray-200" onLoad={() => setIsVideoLoaded(true)}>
+                            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl bg-gray-200" onLoad={() => setIsVideoLoaded(true)}>
                                 {!isVideoLoaded && (
                                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200">
                                         <div className="text-center">

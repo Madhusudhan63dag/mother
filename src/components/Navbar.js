@@ -150,10 +150,25 @@ const Navbar = ({ currentLang, setCurrentLang, translations, languages }) => {
                 <div className="promo-slider relative z-10">
                     <span className="text-sm font-bold flex items-center space-x-16 tracking-wide">
                         <span className="promo-item">
-                            FREE SHIPPING NATIONWIDE
+                            LIMITED TIME OFFER - 33% OFF
                         </span>
                         <span className="promo-item">
-                            LIMITED TIME OFFER - 30% OFF
+                            100% SATISFACTION GUARANTEED
+                        </span>
+                        <span className="promo-item">
+                            FAST & SECURE DELIVERY
+                        </span>
+                        <span className="promo-item">
+                            LIMITED TIME OFFER - 33% OFF
+                        </span>
+                        <span className="promo-item">
+                            100% SATISFACTION GUARANTEED
+                        </span>
+                        <span className="promo-item">
+                            FAST & SECURE DELIVERY
+                        </span>
+                        <span className="promo-item">
+                            LIMITED TIME OFFER - 33% OFF
                         </span>
                         <span className="promo-item">
                             100% SATISFACTION GUARANTEED

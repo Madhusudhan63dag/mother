@@ -12,7 +12,7 @@ export const translations = {
       homelink: '/',
       aboutUs: 'About Us',
       aboutUslink: '/about',
-      product: 'Shop Mother Noni Power Plus',
+      product: 'Order Now',
       productlink: '/product',
       privacyPolicy: 'Privacy Policy',
       privacyPolicylink: '/privacy',
