@@ -857,8 +857,8 @@ const UrgencyAndVideoSection = () => {
                                 )}
                                 
                                 <iframe
-                                    className="w-full h-full"
-                                    src="https://www.youtube.com/embed/zcc52zju4tU?rel=0&modestbranding=1&showinfo=0"
+                                    className="w-full h-full" 
+                                    src="https://www.youtube.com/embed/ysodPrWNrcI?rel=0&modestbranding=1&showinfo=0"
                                     title="Mother Noni Power Plus - Real Customer Success Stories"
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -982,6 +982,20 @@ const Home = ({ currentLang, translations }) => {
                     <ProductSection currentLang={currentLang} />
                     <ImageSlider />
                     <UrgencyAndVideoSection />
+                    {/* Enhanced Labels */}
+                    <div className="promo-slider relative z-10">
+                        <span className="text-md font-bold flex items-center space-x-16 tracking-wide">
+                            <span className="promo-item">
+                                This product is based on traditional Ayurvedic knowledge and does not replace medical advice. Results may vary. Approved by relevant regulatory authorities wherever applicable.
+                            </span>
+                            <span className="promo-item">
+                                This product is based on traditional Ayurvedic knowledge and does not replace medical advice. Results may vary. Approved by relevant regulatory authorities wherever applicable.
+                            </span>
+                            <span className="promo-item">
+                                This product is based on traditional Ayurvedic knowledge and does not replace medical advice. Results may vary. Approved by relevant regulatory authorities wherever applicable.
+                            </span>
+                        </span>
+                    </div>
                     <FAQ currentLang={currentLang} translations={translations} />
                     <Testimonials currentLang={currentLang} translations={translations} />
                 </div>

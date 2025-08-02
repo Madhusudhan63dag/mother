@@ -74,7 +74,7 @@ const Product = ({ translations, currentLang }) => {
     const productImages = [product1, product2, product3];
 
     return (
-        <div className="w-full min-h-screen flex flex-col items-center justify-center">
+        <div className="w-full min-h-screen overflow-hidden flex flex-col items-center justify-center">
             <Helmet>
                 <title>Mother Noni Power Plus - Complete Herbal Wellness Tonic | Natural Health Supplement</title>
                 <meta name="description" content="Mother Noni Power Plus is a powerful herbal wellness tonic featuring noni fruit extract and traditional Ayurvedic herbs. Supports energy, immunity, digestion, and overall vitality. 100% natural formula." />
@@ -414,6 +414,16 @@ const Product = ({ translations, currentLang }) => {
                         <div className="flex items-center gap-2"> 100% Herbal Formula</div>
                     </div>
                 </div>
+            </div>
+            <div className="promo-slider relative z-10">
+                <span className="text-md font-bold flex items-center space-x-16 tracking-wide">
+                    <span className="text-black  ">
+                        This product is based on traditional Ayurvedic knowledge and does not replace medical advice. Results may vary. Approved by relevant regulatory authorities wherever applicable.
+                    </span>
+                    <span className="text-black">
+                        This product is based on traditional Ayurvedic knowledge and does not replace medical advice. Results may vary. Approved by relevant regulatory authorities wherever applicable.
+                    </span>
+                </span>
             </div>
 
            {/* Three Problems, One Solution Section */}

@@ -60,3 +60,25 @@ body {
 }
 
 
+                    
+                    .promo-slider {
+                        animation: smoothSlide 120s linear infinite;
+                        white-space: nowrap;
+                    }
+                    
+                    .promo-slider:hover {
+                        animation-play-state: paused;
+                    }
+                    
+                    .promo-item {
+                        position: relative;
+                        padding: 0 2.5rem;
+                        font-weight: 700;
+                        letter-spacing: 0.5px;
+                        transition: all 0.3s ease;
+                    }
+                    
+                    
+                    .banner-gradient {
+                        animation: smoothSlide 120s linear infinite reverse;
+                    }

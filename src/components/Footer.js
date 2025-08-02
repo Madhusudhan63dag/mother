@@ -41,7 +41,7 @@ const Footer = ({ currentLang, translations }) => {
                                         <Facebook size={20} />
                                     </a>
                                     <a 
-                                        href="https://www.instagram.com/mothernoni_offical" 
+                                        href="https://www.instagram.com/mother_noni" 
                                         className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                                         target="_blank" 
                                         rel="noopener noreferrer"
